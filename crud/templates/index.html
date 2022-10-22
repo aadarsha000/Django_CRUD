@@ -4,7 +4,7 @@
     <div class="d-flex bd-highlight mb-3">
       <div class="me-auto p-2 bd-highlight"><h2>Users</div>
       <div class="p-2 bd-highlight">
-        <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
+        <a href="{% url 'crud:add_employee' %}" class="btn btn-secondary" >Create</a>
       </div>
     </div>
     
@@ -37,8 +37,8 @@
     
                     <th>{{emp.email}}</th>
                     <th>
-                        <button type="button" class="btn btn-outline-secondary">Edit</button>
-                        <button type="button" class="btn btn-outline-secondary">Delete</button>
+                        <a href="{% url 'crud:update_employee' emp.id %}" class="btn btn-outline-secondary">Edit</a>
+                        <a href="{% url 'crud:delete_employee' emp.id %}" class="btn btn-outline-secondary">Delete</a>
                     </th>
                 </tr>
               {% endfor %}
