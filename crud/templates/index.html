@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="d-flex bd-highlight mb-3">
+      <div class="me-auto p-2 bd-highlight"><h2>Users</div>
+      <div class="p-2 bd-highlight">
+        <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
+      </div>
+    </div>
+    
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody id="mytable">
+            {% for emp in employee %}
+                <tr>
+                    <th >{{emp.id}}</th>
+                
+                
+                    <th>{{emp.name}}</th>
+                
+                
+                    <th>{{emp.address}}</th>
+                
+                
+                    <th>{{emp.phone_number}}</th>
+                
+    
+                    <th>{{emp.email}}</th>
+                    <th>
+                        <button type="button" class="btn btn-outline-secondary">Edit</button>
+                        <button type="button" class="btn btn-outline-secondary">Delete</button>
+                    </th>
+                </tr>
+              {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock content %}
